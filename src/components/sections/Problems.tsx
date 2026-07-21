@@ -9,7 +9,7 @@ import { Reveal } from '@/components/ui/Reveal';
  * 完成デザイン画像を主役に表示。見出し・お悩み一覧は SEO / アクセシビリティ用に
  * sr-only でテキスト保持（画像内テキストは読み上げ・検索対象にならないため）。
  *
- * 画像差し替え手順：src/assets/problem.jpg（1774×887・2:1）を同名で置き換え。
+ * 画像差し替え手順：src/assets/problem.jpg（縦型・約0.47）を同名で置き換え。
  * お悩みの文言は src/config/content.ts の `problems` を編集。
  */
 export function Problems() {
@@ -35,8 +35,8 @@ export function Problems() {
             src={problemImg}
             alt="美容サロン・クリニック・接骨院の集客でよくあるお悩みのチェックリスト（イメージ）"
             placeholder="blur"
-            sizes="(max-width: 1120px) 100vw, 1120px"
-            className="h-auto w-full rounded-2xl shadow-card ring-1 ring-charcoal/5"
+            sizes="(max-width: 600px) 100vw, 600px"
+            className="mx-auto h-auto w-full max-w-[600px] rounded-2xl shadow-card ring-1 ring-charcoal/5"
           />
         </Reveal>
       </div>
