@@ -14,8 +14,9 @@ const nextConfig = {
   ...(isPages
     ? {
         output: 'export',
+        // basePath だけで /_next/ アセットもリンクも自動的に prefix される。
+        // assetPrefix は併用すると二重スラッシュ(/repo//_next)になるため設定しない。
         basePath: `/${repo}`,
-        assetPrefix: `/${repo}/`,
         trailingSlash: true,
       }
     : {}),
