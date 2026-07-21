@@ -16,6 +16,8 @@ import { Flow } from '@/components/sections/Flow';
 import { Faq } from '@/components/sections/Faq';
 import { FinalCta } from '@/components/sections/FinalCta';
 import { ContactForm } from '@/components/sections/ContactForm';
+import { Marquee } from '@/components/sections/Marquee';
+import { horizontalImages, portraitImages } from '@/assets/marquee';
 
 export default function HomePage() {
   return (
@@ -24,6 +26,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <HeroVideo />
+        <Marquee images={horizontalImages} variant="landscape" />
         <Problems />
         <Essence />
         <About />
@@ -31,11 +34,13 @@ export default function HomePage() {
         <Comparison />
         <CostComparison />
         <Pricing />
+        <Marquee images={portraitImages} variant="portrait" />
         <BeforeAfter />
         <Industries />
         <Flow />
         <Faq />
         <FinalCta />
+        <Marquee images={portraitImages} variant="portrait" />
         <ContactForm />
       </main>
       <Footer />

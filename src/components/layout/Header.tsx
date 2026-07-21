@@ -37,10 +37,8 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/90 shadow-[0_1px_0_rgba(28,28,30,0.06)] backdrop-blur-md'
-          : 'bg-transparent'
+      className={`fixed inset-x-0 top-0 z-50 border-b border-ivory/10 backdrop-blur-md transition-all duration-300 ${
+        scrolled ? 'bg-charcoal/95 shadow-lg' : 'bg-charcoal/85'
       }`}
     >
       <div className="container-content flex h-16 items-center justify-between lg:h-20">
@@ -64,7 +62,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-charcoal/80 transition-colors hover:text-gold-dark"
+              className="text-sm font-medium text-ivory/80 transition-colors hover:text-gold"
             >
               {item.label}
             </a>
@@ -72,7 +70,7 @@ export function Header() {
           <a
             href="#contact"
             onClick={() => trackEvent('hero_consultation_click')}
-            className="btn-dark px-5 py-2.5 text-sm"
+            className="btn-primary px-5 py-2.5 text-sm"
           >
             お問い合わせ
           </a>
@@ -82,7 +80,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-11 w-11 items-center justify-center rounded-md text-charcoal lg:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-md text-ivory lg:hidden"
           aria-label={open ? 'メニューを閉じる' : 'メニューを開く'}
           aria-expanded={open}
         >
@@ -92,14 +90,14 @@ export function Header() {
 
       {/* モバイルメニュー */}
       {open && (
-        <div className="border-t border-charcoal/10 bg-white lg:hidden">
+        <div className="border-t border-ivory/10 bg-charcoal lg:hidden">
           <nav className="container-content flex flex-col py-4">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-charcoal/5 py-3.5 text-[15px] font-medium text-charcoal"
+                className="border-b border-ivory/10 py-3.5 text-[15px] font-medium text-ivory"
               >
                 {item.label}
               </a>
@@ -110,7 +108,7 @@ export function Header() {
                 setOpen(false);
                 trackEvent('hero_consultation_click');
               }}
-              className="btn-dark mt-4 w-full"
+              className="btn-primary mt-4 w-full"
             >
               お問い合わせ
             </a>

@@ -14,11 +14,16 @@
 
   html {
     -webkit-text-size-adjust: 100%;
+    /* スマホの横スクロール（意図しない横はみ出し）を防ぐ */
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-white text-ink font-sans antialiased;
     text-rendering: optimizeLegibility;
+    /* 横幅を画面内に固定し、横スクロールを出さない */
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   /* 見出しの禁則・文字詰め */
@@ -175,10 +180,89 @@
   animation: heroCtaGlow 2.6s ease-in-out 2s infinite;
 }
 
+/* ============================================================
+   無限マーキー（IMPと同じ構造・サイズ）
+   ------------------------------------------------------------
+   速度・高さ・間隔は下の3変数だけで調整できる。
+   ※ ホバーで停止しない（意図的に hover-pause を入れていない）。
+   ============================================================ */
+.marquee {
+  --marquee-duration: 48s; /* 1ループの時間。大きいほどゆっくり */
+  --marquee-height: 220px; /* 画像の高さ */
+  --marquee-gap: 16px; /* 画像同士の間隔 */
+  overflow: hidden;
+  background: #fff;
+  padding: 30px 0;
+  border-top: 1px solid rgba(28, 28, 30, 0.06);
+  border-bottom: 1px solid rgba(28, 28, 30, 0.06);
+}
+/* トラック2本を横に連結する外枠 */
+.marquee__viewport {
+  display: flex;
+  gap: var(--marquee-gap);
+  width: max-content;
+}
+.marquee__track {
+  display: flex;
+  gap: var(--marquee-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  will-change: transform;
+  animation: marqueeScroll var(--marquee-duration) linear infinite;
+}
+.marquee__item img {
+  height: var(--marquee-height);
+  width: auto;
+  aspect-ratio: 3 / 2; /* 帯が揃うよう固定（cover でクロップ） */
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+/* 縦型バリエーション（9:16） */
+.marquee--portrait {
+  --marquee-height: 320px;
+}
+.marquee--portrait .marquee__item img {
+  aspect-ratio: 9 / 16;
+}
+/* トラック1本ぶん＋gap だけ動かすと、複製トラックが元位置に重なり継ぎ目が消える */
+@keyframes marqueeScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--marquee-gap)));
+  }
+}
+/* モバイル：小さめ・気持ち速め（IMPと同値） */
+@media (max-width: 600px) {
+  .marquee {
+    --marquee-height: 140px;
+    --marquee-gap: 10px;
+    --marquee-duration: 34s;
+    padding: 20px 0;
+  }
+  .marquee--portrait {
+    --marquee-height: 210px;
+  }
+}
+
 /* モーション設定を尊重（アクセシビリティ） */
 @media (prefers-reduced-motion: reduce) {
   :root {
     scroll-behavior: auto;
+  }
+  /* マーキー：自動再生を止め、手動の横スクロールで見られるように */
+  .marquee__viewport {
+    overflow-x: auto;
+    width: auto;
+  }
+  .marquee__track {
+    animation: none;
+  }
+  .marquee__track[aria-hidden='true'] {
+    display: none;
   }
   *,
   *::before,
