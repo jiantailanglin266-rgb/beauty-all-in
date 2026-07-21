@@ -13,9 +13,9 @@ export function LegalLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-ivory">
+    <div className="min-h-screen bg-white">
       {/* 簡易ヘッダー */}
-      <header className="border-b border-charcoal/8 bg-ivory/90 backdrop-blur">
+      <header className="border-b border-charcoal/8 bg-white/90 backdrop-blur">
         <div className="container-content flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <span className="flex h-8 w-8 items-center justify-center rounded-md bg-charcoal text-[11px] font-bold text-gold">

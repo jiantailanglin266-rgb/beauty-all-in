@@ -63,7 +63,7 @@ function FaqItem({
 
 export function Faq() {
   return (
-    <section id="faq" className="section bg-sand">
+    <section id="faq" className="section border-t border-charcoal/5 bg-white">
       <div className="container-content">
         <SectionHeading
           eyebrow="FAQ"

@@ -32,7 +32,7 @@ export function FixedCta() {
             trackEvent('fixed_cta_click', { type: 'phone' });
             trackEvent('phone_click');
           }}
-          className="flex items-center justify-center gap-2 bg-ivory py-3.5 text-sm font-bold text-charcoal"
+          className="flex items-center justify-center gap-2 bg-white py-3.5 text-sm font-bold text-charcoal"
         >
           <Phone size={18} className="text-gold-dark" />
           電話で相談

@@ -11,7 +11,7 @@ export function Industries() {
   const current = industries.find((i) => i.id === active) ?? industries[0];
 
   return (
-    <section id="industries" className="section bg-sand">
+    <section id="industries" className="section border-t border-charcoal/5 bg-white">
       <div className="container-content">
         <SectionHeading
           eyebrow="Use Case"

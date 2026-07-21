@@ -4,7 +4,7 @@ import { Reveal } from '@/components/ui/Reveal';
 
 export function Flow() {
   return (
-    <section id="flow" className="section bg-ivory">
+    <section id="flow" className="section border-t border-charcoal/5 bg-white">
       <div className="container-content">
         <SectionHeading
           eyebrow="Flow"

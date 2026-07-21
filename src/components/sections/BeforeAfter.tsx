@@ -5,7 +5,7 @@ import { Reveal } from '@/components/ui/Reveal';
 
 export function BeforeAfter() {
   return (
-    <section className="section bg-ivory">
+    <section className="section border-t border-charcoal/5 bg-white">
       <div className="container-content">
         <SectionHeading
           eyebrow="Before / After"

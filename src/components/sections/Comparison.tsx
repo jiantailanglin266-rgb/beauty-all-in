@@ -33,7 +33,7 @@ function Mark({ value }: { value: CompareValue }) {
 
 export function Comparison() {
   return (
-    <section id="comparison" className="section bg-ivory">
+    <section id="comparison" className="section border-t border-charcoal/5 bg-white">
       <div className="container-content">
         <SectionHeading
           eyebrow="Comparison"

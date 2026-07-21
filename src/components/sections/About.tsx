@@ -5,7 +5,7 @@ import { siteConfig } from '@/config/site';
 
 export function About() {
   return (
-    <section id="about" className="section bg-ivory">
+    <section id="about" className="section border-t border-charcoal/5 bg-white">
       <div className="container-content">
         <SectionHeading
           eyebrow="About"

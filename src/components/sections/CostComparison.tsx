@@ -6,7 +6,7 @@ import { Reveal } from '@/components/ui/Reveal';
 
 export function CostComparison() {
   return (
-    <section className="section bg-sand">
+    <section className="section border-t border-charcoal/5 bg-white">
       <div className="container-content">
         <SectionHeading
           eyebrow="Cost"

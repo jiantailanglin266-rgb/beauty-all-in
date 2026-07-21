@@ -5,7 +5,7 @@ import { Reveal } from '@/components/ui/Reveal';
 
 export function Services() {
   return (
-    <section id="services" className="section bg-sand">
+    <section id="services" className="section border-t border-charcoal/5 bg-white">
       <div className="container-content">
         <SectionHeading
           eyebrow="Service"

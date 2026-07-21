@@ -93,7 +93,7 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contact" className="section bg-ivory">
+    <section id="contact" className="section border-t border-charcoal/5 bg-white">
       <div className="container-content">
         <SectionHeading
           eyebrow="Contact"

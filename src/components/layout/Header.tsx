@@ -37,7 +37,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-ivory/90 shadow-[0_1px_0_rgba(28,28,30,0.06)] backdrop-blur-md'
+          ? 'bg-white/90 shadow-[0_1px_0_rgba(28,28,30,0.06)] backdrop-blur-md'
           : 'bg-transparent'
       }`}
     >
@@ -90,7 +90,7 @@ export function Header() {
 
       {/* モバイルメニュー */}
       {open && (
-        <div className="border-t border-charcoal/10 bg-ivory lg:hidden">
+        <div className="border-t border-charcoal/10 bg-white lg:hidden">
           <nav className="container-content flex flex-col py-4">
             {navItems.map((item) => (
               <a
