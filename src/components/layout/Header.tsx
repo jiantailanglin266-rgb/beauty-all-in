@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import logo from '@/assets/logo.png';
 import { siteConfig } from '@/config/site';
 import { trackEvent } from '@/lib/gtag';
 
@@ -45,15 +47,15 @@ export function Header() {
         {/* ロゴ */}
         <Link
           href="#top"
-          className="group flex items-center gap-2"
+          className="flex items-center"
           aria-label={`${siteConfig.serviceName} トップへ`}
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-charcoal text-[11px] font-bold tracking-tight text-gold">
-            BAI
-          </span>
-          <span className="font-serif text-lg font-bold tracking-tight text-charcoal">
-            {siteConfig.serviceName}
-          </span>
+          <Image
+            src={logo}
+            alt={siteConfig.serviceName}
+            priority
+            className="h-7 w-auto sm:h-8"
+          />
         </Link>
 
         {/* PCナビ */}

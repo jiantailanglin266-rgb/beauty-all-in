@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
+import logo from '@/assets/logo.png';
 import { siteConfig } from '@/config/site';
 
 /** 規約・ポリシー等の下層ページ共通レイアウト */
@@ -17,13 +19,12 @@ export function LegalLayout({
       {/* 簡易ヘッダー */}
       <header className="border-b border-charcoal/8 bg-white/90 backdrop-blur">
         <div className="container-content flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-charcoal text-[11px] font-bold text-gold">
-              BAI
-            </span>
-            <span className="font-serif text-lg font-bold tracking-tight text-charcoal">
-              {siteConfig.serviceName}
-            </span>
+          <Link
+            href="/"
+            className="flex items-center"
+            aria-label={siteConfig.serviceName}
+          >
+            <Image src={logo} alt={siteConfig.serviceName} className="h-7 w-auto sm:h-8" />
           </Link>
           <Link
             href="/"

@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from '@/assets/logo.png';
 import { siteConfig } from '@/config/site';
 
 const links = [
@@ -15,14 +17,11 @@ export function Footer() {
       <div className="container-content py-14">
         <div className="flex flex-col gap-10 lg:flex-row lg:justify-between">
           <div className="max-w-sm">
-            <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-md bg-gold text-[11px] font-bold text-charcoal">
-                BAI
-              </span>
-              <span className="font-serif text-lg font-bold tracking-tight text-ivory">
-                {siteConfig.serviceName}
-              </span>
-            </div>
+            <Image
+              src={logo}
+              alt={siteConfig.serviceName}
+              className="h-9 w-auto sm:h-10"
+            />
             <p className="mt-4 text-sm leading-relaxed text-ivory/60">
               美容サロン・クリニック・接骨院の集客とホームページ、SEO・MEO・AI検索・SNS・CRMを、
               月額{siteConfig.price.monthlyExcl.toLocaleString()}円でまとめて支援するオールインワンサービスです。
