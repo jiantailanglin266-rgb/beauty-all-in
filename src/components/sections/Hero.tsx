@@ -21,7 +21,7 @@ import { trackEvent } from '@/lib/gtag';
  * JSが失敗しても必ず表示状態で着地）。Framerは「失敗しても画像が見える」
  * パララックスにのみ使用。画像内の焼き込みCTAには透明の実クリック領域を重ね計測維持。
  *
- * 画像差し替え手順：src/assets/hero-fv.jpg（1024×1536・2:3）を同名で置き換え。
+ * 画像差し替え手順：src/assets/hero-fv.jpg（縦型・約0.47）を同名で置き換え。
  * ボタン位置が変わる場合は overlay の top/left/width/height（％）を調整。
  */
 export function Hero() {
@@ -88,7 +88,7 @@ export function Hero() {
             href="#contact"
             onClick={() => trackEvent('hero_consultation_click')}
             aria-label={siteConfig.cta.primary}
-            className="absolute left-[3%] top-[41.5%] block h-[5.6%] w-[40%] rounded-full focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+            className="absolute left-[4%] top-[34.8%] block h-[5.2%] w-[44%] rounded-full focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
           >
             <span
               aria-hidden
@@ -102,7 +102,7 @@ export function Hero() {
             href="#contact"
             onClick={() => trackEvent('hero_document_click')}
             aria-label={siteConfig.cta.secondary}
-            className="absolute left-[3%] top-[47.6%] block h-[4.9%] w-[39%] rounded-full focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+            className="absolute left-[4%] top-[40.4%] block h-[4.6%] w-[43%] rounded-full focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
           >
             <span className="sr-only">{siteConfig.cta.secondary}</span>
           </a>
