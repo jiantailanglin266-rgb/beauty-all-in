@@ -31,6 +31,17 @@ const nextConfig = {
       },
     ],
   },
+  // 動画ファイルを import できるようにする（/_next/ 配下に出力され basePath も自動付与）
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.(mp4|webm)$/,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/media/[name].[hash][ext]',
+      },
+    });
+    return config;
+  },
 };
 
 export default nextConfig;

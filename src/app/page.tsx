@@ -2,6 +2,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { FixedCta } from '@/components/layout/FixedCta';
 import { Hero } from '@/components/sections/Hero';
+import { HeroVideo } from '@/components/sections/HeroVideo';
 import { Problems } from '@/components/sections/Problems';
 import { Essence } from '@/components/sections/Essence';
 import { About } from '@/components/sections/About';
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <HeroVideo />
         <Problems />
         <Essence />
         <About />
