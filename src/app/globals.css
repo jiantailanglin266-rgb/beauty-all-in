@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    scroll-behavior: smooth;
+    /* フォント指定（OSの高品質な和文フォントを利用。ネットワーク非依存） */
+    --font-sans: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP',
+      'Yu Gothic', 'YuGothic', Meiryo, sans-serif;
+    --font-serif: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho',
+      'Noto Serif JP', 'Shippori Mincho', serif;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ivory text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* 見出しの禁則・文字詰め */
+  h1,
+  h2,
+  h3 {
+    @apply font-serif tracking-tight;
+    word-break: auto-phrase;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-ink;
+  }
+
+  /* フォーカスリング（アクセシビリティ） */
+  :focus-visible {
+    @apply outline-none ring-2 ring-gold ring-offset-2 ring-offset-ivory;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+
+  /* セクション共通の縦余白 */
+  .section {
+    @apply py-16 sm:py-20 lg:py-28;
+  }
+
+  /* 章タイトルの英字ラベル */
+  .eyebrow {
+    @apply mb-3 inline-block text-xs font-semibold uppercase tracking-[0.25em] text-gold;
+  }
+
+  /* ボタン基礎 */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 text-base font-semibold leading-none transition-all duration-300 focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-gold text-charcoal shadow-gold hover:bg-gold-light hover:-translate-y-0.5;
+  }
+  .btn-secondary {
+    @apply btn border border-charcoal/20 bg-white/70 text-charcoal hover:border-gold hover:text-gold-dark;
+  }
+  .btn-dark {
+    @apply btn bg-charcoal text-ivory hover:bg-charcoal-soft hover:-translate-y-0.5;
+  }
+
+  /* 金の下線見出し装飾 */
+  .gold-rule::after {
+    content: '';
+    @apply mx-auto mt-5 block h-px w-16 bg-gradient-to-r from-transparent via-gold to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* リッチな背景グラデーション */
+  .bg-hero-radial {
+    background:
+      radial-gradient(
+        ellipse 80% 60% at 70% 10%,
+        rgba(194, 160, 90, 0.12),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 60% 50% at 10% 90%,
+        rgba(194, 160, 90, 0.08),
+        transparent 60%
+      ),
+      #1c1c1e;
+  }
+}
+
+/* モーション設定を尊重（アクセシビリティ） */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
