@@ -14,15 +14,21 @@
 
   html {
     -webkit-text-size-adjust: 100%;
-    /* スマホの横スクロール（意図しない横はみ出し）を防ぐ */
-    overflow-x: hidden;
+    /* スマホの横スクロール／横ぶれ（オーバースクロール）を防ぐ */
+    overflow-x: hidden; /* 旧ブラウザ向けフォールバック */
+    overflow-x: clip; /* iOSでのスクロール漏れを確実に防ぐ */
+    overscroll-behavior-x: none; /* 横方向のバウンス（横ぶれ）を止める */
   }
 
   body {
     @apply bg-white text-ink font-sans antialiased;
     text-rendering: optimizeLegibility;
-    /* 横幅を画面内に固定し、横スクロールを出さない */
+    position: relative;
+    /* 横幅を画面内に固定し、横スクロール／横ぶれを出さない */
     overflow-x: hidden;
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+    width: 100%;
     max-width: 100%;
   }
 
@@ -191,6 +197,8 @@
   --marquee-height: 220px; /* 画像の高さ */
   --marquee-gap: 16px; /* 画像同士の間隔 */
   overflow: hidden;
+  overflow: clip;
+  max-width: 100%;
   background: #fff;
   padding: 30px 0;
   border-top: 1px solid rgba(28, 28, 30, 0.06);
