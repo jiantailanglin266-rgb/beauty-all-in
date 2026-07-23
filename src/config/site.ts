@@ -54,13 +54,13 @@ export const siteConfig = {
       '初期費用については、店舗の状況や制作内容に応じて個別にご案内します',
   },
 
-  /** 会社情報（仮） */
+  /** 会社情報 */
   company: {
-    name: '株式会社〇〇',
+    name: 'IMPメディア事業部',
     address: '東京都〇〇区〇〇',
     tel: '00-0000-0000',
     telHref: 'tel:0000000000',
-    email: 'info@example.com',
+    email: 'support@imp-aicreat.com',
     businessHours: '平日10:00〜18:00',
     ceo: '代表取締役 〇〇 〇〇', // 特商法表記用（仮）
     established: '2020年', // 仮
@@ -71,7 +71,7 @@ export const siteConfig = {
     line: 'https://line.me/', // 仮URL
     instagram: 'https://www.instagram.com/', // 仮URL
     // お問い合わせ送信先（サーバー側環境変数 CONTACT_TO_EMAIL が優先）
-    contactEmail: 'info@example.com',
+    contactEmail: 'support@imp-aicreat.com',
   },
 
   /** CTA文言 */
